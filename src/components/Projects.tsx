@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import { ExternalLink, ImagePlus } from 'lucide-react'
 import type { MouseEvent, ReactNode } from 'react'
-import { projects, ui, type Project } from '../data/content'
+import { asset, projects, ui, type Project } from '../data/content'
 import { useLang } from '../lang'
 import { GithubIcon, Reveal, SectionHeader } from './ui'
 
@@ -48,7 +48,7 @@ function ProjectCard({ p }: { p: Project }) {
       {/* Screenshot slot */}
       <div className="relative aspect-[16/10] overflow-hidden border-b border-white/5 bg-gradient-to-br from-violet-950/60 via-ink to-cyan-950/40">
         {p.image ? (
-          <img src={p.image} alt={t(p.title)} className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
+          <img src={asset(p.image)} alt={t(p.title)} className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105" />
         ) : (
           <>
             <div className="absolute inset-0 p-5 transition duration-700 group-hover:scale-[1.03]">

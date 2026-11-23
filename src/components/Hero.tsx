@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { ArrowDown, Download, MapPin } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { heroRoles, profile, ui } from '../data/content'
+import { asset, heroRoles, profile, ui } from '../data/content'
 import { useLang } from '../lang'
 import { GithubIcon, LinkedinIcon } from './ui'
 
@@ -71,7 +71,7 @@ export default function Hero() {
               <ArrowDown className="h-4 w-4 transition group-hover:translate-y-0.5" />
             </a>
             <a
-              href={profile.cv}
+              href={asset(profile.cv)}
               download
               className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 font-medium text-gray-100 backdrop-blur transition hover:border-white/30 hover:bg-white/10"
             >

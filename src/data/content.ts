@@ -6,6 +6,10 @@
  * ============================================================
  */
 
+/** Resolves a /public path (e.g. '/projects/x.png') against the site base URL. */
+export const asset = (path: string) =>
+  path.startsWith('/') ? import.meta.env.BASE_URL + path.slice(1) : path
+
 export type Lang = 'en' | 'ar'
 export type T = Record<Lang, string>
 
