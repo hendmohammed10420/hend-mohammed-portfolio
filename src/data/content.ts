@@ -194,6 +194,20 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 'invoice-vat',
+    status: 'live',
+    mock: 'invoice',
+    title: { en: 'Fawtara · Invoices & VAT', ar: 'فوترة · الفواتير والضريبة' },
+    desc: {
+      en: 'A bilingual Arabic/English invoicing app with full RTL support. Create invoices with standard 15%, zero-rated or exempt VAT and see totals update live, print tax invoices with a ZATCA QR code, and track a VAT report with KPIs, a 6-month chart and a breakdown by VAT category.',
+      ar: 'تطبيق فواتير ثنائي اللغة (عربي/إنجليزي) يدعم الاتجاه من اليمين لليسار بالكامل. أنشئ فواتير بضريبة 15% أو صفرية أو معفاة مع تحديث الإجماليات مباشرةً، واطبع فواتير ضريبية برمز QR متوافق مع هيئة الزكاة والضريبة والجمارك، وتابع تقرير الضريبة بمؤشرات أداء ورسم بياني لآخر 6 أشهر وتوزيع حسب فئة الضريبة.',
+    },
+    tags: ['React', 'TypeScript', 'Ant Design', 'TanStack Query', 'RTL'],
+    image: '/projects/fawtara.png',
+    demo: 'https://fawtara-invoice-vat.vercel.app',
+    repo: 'https://github.com/hendmohammed10420/fawtara-invoice-vat',
+  },
+  {
     id: 'admin-dashboard',
     status: 'wip',
     mock: 'dashboard',
@@ -203,20 +217,6 @@ export const projects: Project[] = [
       ar: 'Dashboard للمبيعات والمخزون فيه KPI cards ورسوم بيانية وجداول بفلاتر، وتبديل عربي/إنجليزي (RTL) بضغطة.',
     },
     tags: ['React', 'TypeScript', 'Ant Design', 'TanStack Query', 'RTL'],
-    image: '',
-    demo: '',
-    repo: '',
-  },
-  {
-    id: 'invoice-vat',
-    status: 'wip',
-    mock: 'invoice',
-    title: { en: 'Invoice & VAT Reports', ar: 'الفواتير وتقارير الضريبة' },
-    desc: {
-      en: 'Create invoices with 15% VAT, preview a printable Arabic invoice, and see a monthly VAT summary report.',
-      ar: 'إنشاء فواتير بضريبة 15%، ومعاينة فاتورة عربي جاهزة للطباعة، وتقرير شهري ملخص للضريبة.',
-    },
-    tags: ['React', 'TypeScript', 'Forms', 'Reports'],
     image: '',
     demo: '',
     repo: '',
