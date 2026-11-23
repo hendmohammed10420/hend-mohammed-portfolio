@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-ar: "Cairo", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-ink: #07070d;
+  --color-panel: #0f0f1a;
+  --color-line: #1f1f33;
+  --color-violet: #8b5cf6;
+  --color-cyan: #22d3ee;
+  --color-pink: #ec4899;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-ink);
+  color: #e5e7eb;
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-ar);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgb(139 92 246 / 0.45);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #a78bfa 0%, #22d3ee 50%, #f472b6 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 6s linear infinite;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.06);
+}
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.08), transparent);
+  animation: shimmer 1.8s infinite;
+}
+@keyframes shimmer {
+  to { transform: translateX(100%); }
+}
+
+.glow-card {
+  background: linear-gradient(var(--color-panel), var(--color-panel)) padding-box,
+    linear-gradient(140deg, rgb(139 92 246 / 0.5), rgb(34 211 238 / 0.15), rgb(236 72 153 / 0.4)) border-box;
+  border: 1px solid transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
